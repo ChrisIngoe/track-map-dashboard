@@ -6,9 +6,9 @@ const HomePage = () => {
   return (
     <>
       <div className="hero-start">
-        <h1 className="title">Welcome the Track Map Dashboard!</h1>
+        <h1 className="title">Welcome the Track Map!</h1>
         <p className="description">
-          It uses ReactStrap for quick prototyping and demo authentication.
+          View Track Map location points, maps and routes.
         </p>
         <Container>
           <div className="lead my-5">

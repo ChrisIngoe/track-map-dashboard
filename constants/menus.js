@@ -8,6 +8,13 @@ const MENUS = [
     icon: 'fas fa-chart-pie',
   },
   {
+    name: 'map',
+    as: 'a',
+    href: '/page/map',
+    label: 'Map',
+    icon: 'fas fa-map',
+  },
+  {
     name: 'domains',
     as: 'a',
     href: '/card/posts',
