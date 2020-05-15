@@ -12,16 +12,18 @@ import {
   DropdownItem,
   NavbarText,
 } from 'reactstrap';
-import { useUser } from '../../lib/hooks';
+//import { useUser } from '../../lib/hooks';
+import { useFetchUser } from '../../lib/user';
 
 function NavBar() {
-  const [user, { mutate }] = useUser();
+  //const [user, { mutate }] = useUser();
+  const { user, loading } = useFetchUser();
 
   const logoutHandler = async e => {
     e.preventDefault();
     try {
-      const res = await fetch('/api/auth', {
-        method: 'DELETE',
+      const res = await fetch('/api/logout', {
+        method: 'GET',
       });
       if (res.status === 204) {
         mutate(null);
@@ -46,7 +48,7 @@ function NavBar() {
               <NavLink href="#" className="d-none d-sm-block"></NavLink>
             </NavItem>
           </Nav>
-          {user && user.name ? (
+          {!loading && user ? (
             <UncontrolledDropdown inNavbar>
               <DropdownToggle caret nav className="text-secondary">
                 <NavbarText className="align-self-center text-left font-weight-bold">
@@ -69,7 +71,7 @@ function NavBar() {
                   </NavLink>
                 </DropdownItem>
                 <DropdownItem tag="div">
-                  <NavLink onClick={logoutHandler} className="text-dark">
+                  <NavLink href="/api/logout" className="text-dark">
                     <i className="fas fa-home"></i> Logout
                   </NavLink>
                 </DropdownItem>
@@ -77,7 +79,7 @@ function NavBar() {
             </UncontrolledDropdown>
           ) : (
             <NavItem>
-              <NavLink href="/page/login" className="text-light h5">
+              <NavLink href="/api/login" className="text-light h5">
                 Login
               </NavLink>
             </NavItem>

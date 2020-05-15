@@ -7,12 +7,14 @@ import {
   NavLink,
   UncontrolledCollapse,
 } from 'reactstrap';
-import { useUser } from '../../lib/hooks';
+//import { useUser } from '../../lib/hooks';
+import { useFetchUser } from '../../lib/user';
 
 import { MENUS, SUBMENUS } from '../../constants/menus';
 
 function NavLeft(props) {
-  const [user, { mutate }] = useUser();
+  //const [user, { mutate }] = useUser();
+  const { user, loading } = useFetchUser();
   const { activeLink } = props;
   return (
     <>
@@ -34,7 +36,7 @@ function NavLeft(props) {
           })}
         </ListGroup>
       </div>
-      {user && user.name ? (
+      {!loading && user ? (
         <>
           <h4 className="headline">Private Pages</h4>
           <div className="wrapper-list-group">

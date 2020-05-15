@@ -13,8 +13,7 @@ import useSwr from 'swr';
 const fetcher = (...args) => fetch(...args).then(response => response.json());
 
 function MapPage() {
-  const url =
-    'https://data.police.uk/api/crimes-street/all-crime?lat=51.39&lng=-1.33&date=2020-03';
+  const url = '/api/locations';
   const { data, error } = useSwr(url, { fetcher });
   const crimes = data && !error ? data.slice(0, 100) : [];
   const draggable = false;

@@ -1,7 +1,7 @@
 import App from 'next/app';
 import React from 'react';
-import Router from 'next/router';
-import UserContext from '../components/hooks/userContext';
+//import Router from 'next/router';
+//import UserContext from '../components/hooks/userContext';
 import MenuContext from '../components/hooks/menuContext';
 import '../assets/scss/main.scss';
 
@@ -74,22 +74,14 @@ class MyApp extends App {
   render() {
     const { Component, pageProps, store } = this.props;
     return (
-      <UserContext.Provider
+      <MenuContext.Provider
         value={{
-          user: this.state.user,
-          signIn: this.signIn,
-          signOut: this.signOut,
+          menuOpen: this.state.menuOpen,
+          toggleMenu: this.toggleMenu,
         }}
       >
-        <MenuContext.Provider
-          value={{
-            menuOpen: this.state.menuOpen,
-            toggleMenu: this.toggleMenu,
-          }}
-        >
-          <Component {...pageProps} />
-        </MenuContext.Provider>
-      </UserContext.Provider>
+        <Component {...pageProps} />
+      </MenuContext.Provider>
     );
   }
 }

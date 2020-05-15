@@ -4,6 +4,7 @@
   "description": "Next.Js Track Map dashboard application",
   "main": "index.js",
   "dependencies": {
+    "@auth0/nextjs-auth0": "^0.6.0",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@hapi/iron": "^6.0.0",
     "@sendgrid/mail": "^7.1.0",
@@ -14,6 +15,7 @@
     "cookie": "^0.4.1",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
+    "isomorphic-unfetch": "^3.0.0",
     "leaflet": "^1.4.0",
     "leaflet-geosearch": "^2.7.0",
     "mongodb": "^3.5.7",
