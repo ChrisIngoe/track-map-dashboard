@@ -15,7 +15,7 @@ const fetcher = (...args) => fetch(...args).then(response => response.json());
 function MapPage() {
   const url = '/api/locations';
   const { data, error } = useSwr(url, { fetcher });
-  const crimes = data && !error ? data.slice(0, 100) : [];
+  const crimes = data && !error ? data.Items : [];
   const draggable = false;
   const position = [51.39, -1.33];
 
@@ -38,19 +38,22 @@ function MapPage() {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        {crimes.map(crime => (
-          <Marker
-            draggable={false}
-            onDragend={updatePosition}
-            key={crime.id}
-            position={[crime.location.latitude, crime.location.longitude]}
-            animate={true}
-          >
-            <Popup minWidth={90}>
-              <span onClick={toggleDraggable}>{crime.category}</span>
-            </Popup>
-          </Marker>
-        ))}
+        {crimes.map(
+          crime =>
+            crime.coords && (
+              <Marker
+                draggable={false}
+                onDragend={updatePosition}
+                key={crime.id}
+                position={[crime.coords.latitude, crime.coords.longitude]}
+                animate={true}
+              >
+                <Popup minWidth={90}>
+                  <span onClick={toggleDraggable}>{crime.category}</span>
+                </Popup>
+              </Marker>
+            ),
+        )}
       </Map>
     </div>
   );

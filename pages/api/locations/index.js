@@ -1,36 +1,17 @@
-import nextConnect from 'next-connect';
-import middleware from '../../../middlewares/middleware';
-import passport from '../../../lib/passport';
-import { localStrategy } from '../../../lib/password-local';
+import auth0 from '../../../lib/auth0';
+import fetch from 'isomorphic-unfetch';
 
-const handler = nextConnect();
+const fetcher = (...args) => fetch(...args).then(response => response.json());
 
-handler.use(middleware);
-passport.use(localStrategy);
-
-const authenticate = (method, req, res) =>
-  new Promise((resolve, reject) => {
-    passport.authenticate(method, { session: false }, (error, token) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve(token);
-      }
-    })(req, res);
-  });
-
-handler.get(async (req, res) => {
-  const user = await authenticate('local', req, res);
-  // session is the payload to save in the token, it may contain basic info about the user
-  const session = { ...user };
-  console.log('location.index.js; get');
-  console.log(session);
-  console.log(req.user);
-  if (!req.user) {
-    return res.json(401).send('Unauthenticated');
-  } else {
-    return res.json(200).send([]);
+export default auth0.requireAuthentication(async (req, res) => {
+  try {
+    const callRes = await fetcher(process.env.LOCATION_URL);
+    if (!callRes || callRes.statusCode !== '200') {
+      return res.status(400).send();
+    }
+    return res.status(200).json(callRes.body);
+  } catch (error) {
+    console.error(error);
+    res.status(error.status || 500).end(error.message);
   }
 });
-
-export default handler;

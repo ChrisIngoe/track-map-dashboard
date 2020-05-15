@@ -98,9 +98,6 @@ const LoginPage = () => {
           >
             Submit
           </Button>
-          <Link href="/page/forgotpassword">
-            <a>Forgot password</a>
-          </Link>
         </Form>
       </CardBody>
     </Card>
