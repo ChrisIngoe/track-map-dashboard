@@ -15,7 +15,7 @@ const fetcher = (...args) => fetch(...args).then(response => response.json());
 function MapPage() {
   const url = '/api/locations';
   const { data, error } = useSwr(url, { fetcher });
-  const crimes = data && !error ? data.Items : [];
+  const crimes = data && data.Items && !error ? data.Items : [];
   const draggable = false;
   const position = [51.39, -1.33];
 

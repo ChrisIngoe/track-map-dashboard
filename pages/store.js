@@ -1,14 +1,19 @@
-import Container from '../components/container';
-import Layout from '../components/page-layout';
+import React from 'react';
+import MainLayout from '../layout/MainLayout';
+import HeadDefault from '../layout/head/HeadDefault';
 
-export default function Store() {
+const Store = () => {
   return (
     <>
-      <Layout>
-        <Container>
-          <p>store</p>
-        </Container>
-      </Layout>
+      <HeadDefault
+        title="Track Map Dashboard"
+        description="NextJS with Reactstrap components with SCSS library, a NextJS example application."
+      />
+      <MainLayout>
+        <p>Store Page</p>
+      </MainLayout>
     </>
   );
-}
+};
+
+export default Store;

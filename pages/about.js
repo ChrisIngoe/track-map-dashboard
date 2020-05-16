@@ -1,14 +1,19 @@
-import Container from '../components/container';
-import Layout from '../components/page-layout';
+import React from 'react';
+import MainLayout from '../layout/MainLayout';
+import HeadDefault from '../layout/head/HeadDefault';
 
-export default function About() {
+const About = () => {
   return (
     <>
-      <Layout>
-        <Container>
-          <p>about</p>
-        </Container>
-      </Layout>
+      <HeadDefault
+        title="Track Map Dashboard"
+        description="NextJS with Reactstrap components with SCSS library, a NextJS example application."
+      />
+      <MainLayout>
+        <p>About Page</p>
+      </MainLayout>
     </>
   );
-}
+};
+
+export default About;
