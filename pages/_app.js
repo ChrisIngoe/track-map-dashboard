@@ -1,7 +1,6 @@
 import App from 'next/app';
 import React from 'react';
 //import Router from 'next/router';
-//import UserContext from '../components/hooks/userContext';
 import MenuContext from '../components/hooks/menuContext';
 import '../assets/scss/main.scss';
 

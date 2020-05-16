@@ -12,7 +12,6 @@ import {
   DropdownItem,
   NavbarText,
 } from 'reactstrap';
-//import { useUser } from '../../lib/hooks';
 import { useFetchUser } from '../../lib/user';
 
 function NavBar() {

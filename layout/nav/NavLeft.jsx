@@ -7,7 +7,6 @@ import {
   NavLink,
   UncontrolledCollapse,
 } from 'reactstrap';
-//import { useUser } from '../../lib/hooks';
 import { useFetchUser } from '../../lib/user';
 
 import { MENUS, SUBMENUS } from '../../constants/menus';

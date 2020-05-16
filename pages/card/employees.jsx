@@ -3,10 +3,9 @@ import React from 'react';
 import MainLayout from '../../layout/MainLayout';
 import EmployeeContainer from '../../components/container/card/EmployeeContainer';
 import HeadDefault from '../../layout/head/HeadDefault';
-import { useUser } from '../../lib/hooks';
 
 const Employees = ({ dispatch, storeLayout, id }) => {
-  const user = useUser({ redirectTo: '/page/login' });
+  const user = null;
   return (
     <>
       <HeadDefault
@@ -18,13 +17,11 @@ const Employees = ({ dispatch, storeLayout, id }) => {
         dispatch={dispatch}
         storeLayout={storeLayout}
       >
-        {user && (
-          <EmployeeContainer
-            dispatch={dispatch}
-            storeLayout={storeLayout}
-            id={id}
-          />
-        )}
+        <EmployeeContainer
+          dispatch={dispatch}
+          storeLayout={storeLayout}
+          id={id}
+        />
       </MainLayout>
     </>
   );
