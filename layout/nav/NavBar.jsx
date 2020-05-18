@@ -60,16 +60,6 @@ function NavBar() {
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem tag="div">
-                  <NavLink href="/page/profile" className="text-dark">
-                    <i className="fas fa-user"></i> Profile
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem tag="div">
-                  <NavLink href="/page/setting" className="text-dark">
-                    <i className="fas fa-cog"></i> Setting
-                  </NavLink>
-                </DropdownItem>
-                <DropdownItem tag="div">
                   <NavLink href="/api/logout" className="text-dark">
                     <i className="fas fa-home"></i> Logout
                   </NavLink>
