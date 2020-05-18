@@ -17,7 +17,6 @@ function NavLeft(props) {
   const { activeLink } = props;
   return (
     <>
-      <h4 className="headline">Links</h4>
       <div className="wrapper-list-group">
         <ListGroup flush className="list-group-nav-left" tag="div">
           {MENUS.map((item, k) => {
@@ -37,7 +36,6 @@ function NavLeft(props) {
       </div>
       {!loading && user ? (
         <>
-          <h4 className="headline">Private Pages</h4>
           <div className="wrapper-list-group">
             <ListGroup flush className="list-group-nav-left" tag="div">
               {SUBMENUS.map((subItem, k) => {

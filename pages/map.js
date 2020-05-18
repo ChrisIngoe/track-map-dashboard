@@ -1,10 +1,10 @@
 import React from 'react';
-import MainLayout from '../../layout/MainLayout';
-import HeadDefault from '../../layout/head/HeadDefault';
+import MainLayout from '../layout/MainLayout';
+import HeadDefault from '../layout/head/HeadDefault';
 import dynamic from 'next/dynamic';
 
 const MapPageWithNoSSR = dynamic(
-  () => import('../../components/container/page/MapPage'),
+  () => import('../components/container/page/MapPage'),
   {
     ssr: false,
   },

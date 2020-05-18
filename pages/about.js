@@ -1,6 +1,7 @@
 import React from 'react';
 import MainLayout from '../layout/MainLayout';
 import HeadDefault from '../layout/head/HeadDefault';
+import AboutPage from '../components/container/page/AboutPage';
 
 const About = () => {
   return (
@@ -10,7 +11,7 @@ const About = () => {
         description="NextJS with Reactstrap components with SCSS library, a NextJS example application."
       />
       <MainLayout>
-        <p>About Page</p>
+        <AboutPage />
       </MainLayout>
     </>
   );

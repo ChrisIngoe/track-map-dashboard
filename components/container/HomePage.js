@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <div className="hero-start">
-        <h1 className="title">Welcome the Track Map!</h1>
+        <h1 className="title">Welcome to Track Map!</h1>
         <p className="description">
           View Track Map location points, maps and routes.
         </p>
@@ -22,62 +22,35 @@ const HomePage = () => {
               <Col className="my-3">
                 <i className="fab fa-react fa-8x text-info"></i>
               </Col>
+              <Col className="my-3">
+                <i className="fab fa-aws fa-8x text-secondary"></i>
+              </Col>
             </Row>
-            <h4>Feature</h4>
+            <Row className="text-center mx-auto my-5">
+              <Col className="my-3">
+                <i className="fab fa-css3 fa-8x text-primary"></i>
+              </Col>
+              <Col className="my-3">
+                <i className="fab fa-html5 fa-8x text-danger"></i>
+              </Col>
+              <Col className="my-3">
+                <i className="fab fa-font-awesome fa-8x text-info"></i>
+              </Col>
+              <Col className="my-3">
+                <i className="fab fa-github fa-8x text-secondary"></i>
+              </Col>
+            </Row>
+            <h4>Powered By:</h4>
             <ul>
               <li>
-                Bootstrap SCSS with customise variables for themes in any
-                project.
+                Built with React framework using classes and functional
+                components.
               </li>
-              <li>
-                Page, components, typography, forms, button, background, icons
-                and cards samples with others additonal libraries.
-              </li>
+              <li>Styled using Bootstrap SCSS.</li>
+              <li>Packaged by WebPack.</li>
+              <li>Compiled and rendered with Vercel engines.</li>
             </ul>
           </div>
-          <CardDeck>
-            <Card color="dark">
-              <Col lg="12">
-                <Link href="/page/documentation">
-                  <a href="/page/documentation" className="text-light">
-                    <h3>
-                      Documentation{' '}
-                      <i className="fas fa-chevron-right align-self-center"></i>
-                    </h3>
-                    <p>Learn more about Next.js in the documentation.</p>
-                  </a>
-                </Link>
-              </Col>
-            </Card>
-            <Card color="dark">
-              <Col lg="12">
-                <Link href="/page/documentation">
-                  <a href="/page/documentation" className="text-light">
-                    <h3>
-                      Next.js Learn <i className="fas fa-chevron-right"></i>
-                    </h3>
-                    <p>
-                      Learn about Next.js by following an interactive tutorial!
-                    </p>
-                  </a>
-                </Link>
-              </Col>
-            </Card>
-            <Card color="dark">
-              <Col lg="12">
-                <Link href="/page/documentation">
-                  <a href="/page/documentation" className="text-light">
-                    <h3>
-                      Examples <i className="fas fa-chevron-right"></i>
-                    </h3>
-                    <p>
-                      Find other example boilerplates on the Next.js GitHub.
-                    </p>
-                  </a>
-                </Link>
-              </Col>
-            </Card>
-          </CardDeck>
         </Container>
       </div>
     </>
