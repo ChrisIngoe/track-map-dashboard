@@ -1,6 +1,5 @@
 import App from 'next/app';
 import React from 'react';
-//import Router from 'next/router';
 import MenuContext from '../components/hooks/menuContext';
 import '../assets/scss/main.scss';
 
@@ -11,41 +10,12 @@ class MyApp extends App {
   }
 
   componentDidMount = () => {
-    /*const user = localStorage.getItem('nextjs-app-starter-user');
-    if (user) {
-      this.setState({
-        user,
-      });
-    } else {
-      Router.push('/page/login');
-    }*/
     const menuOpen = localStorage.getItem('nextjs-app-starter-menu');
     if (menuOpen === true) {
       this.setState({
         menuOpen,
       });
     }
-  };
-
-  signIn = username => {
-    /*localStorage.setItem('nextjs-app-starter-user', username);
-
-    this.setState(
-      {
-        user: username,
-      },
-      () => {
-        Router.push('/');
-      },
-    );*/
-  };
-
-  signOut = () => {
-    /*localStorage.removeItem('nextjs-app-starter-user');
-    this.setState({
-      user: null,
-    });
-    Router.push('/page/login');*/
   };
 
   toggleMenu = () => {
@@ -57,9 +27,6 @@ class MyApp extends App {
 
   static async getInitialProps({ Component, ctx }) {
     const {
-      store,
-      isServer,
-      req,
       query: { amp },
     } = ctx;
     let pageProps = {};
@@ -71,7 +38,7 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <MenuContext.Provider
         value={{

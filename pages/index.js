@@ -9,10 +9,6 @@ class Index extends React.Component {
     this.state = { isScrolled: false };
   }
 
-  static async getInitialProps(props) {
-    const { store, isServer, req, res } = props.ctx;
-  }
-
   render() {
     const { storeLayout } = this.props;
 
