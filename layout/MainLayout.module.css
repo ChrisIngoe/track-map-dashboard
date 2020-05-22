@@ -1,0 +1,20 @@
+.wrapper {
+  margin-top: 5rem;
+}
+
+.wrapperleft {
+  background-color: #f8f9fa;
+  height: 100%;
+  overflow-y: auto;
+  position: fixed;
+  width: 240px;
+}
+
+.wrappercontent {
+  height: 100%;
+  min-height: 90vh;
+  animation-delay: 0.85s;
+  animation: scaleUpCenter 0.15s linear both;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}

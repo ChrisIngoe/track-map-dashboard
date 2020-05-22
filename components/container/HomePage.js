@@ -1,13 +1,13 @@
-import React, { memo } from 'react';
-import Link from 'next/link';
-import { Row, Container, Col, CardDeck, Card } from 'reactstrap';
+import React from 'react';
+import { Row, Container, Col } from 'reactstrap';
+import styles from './HomePage.module.css';
 
 const HomePage = () => {
   return (
     <>
-      <div className="hero-start">
-        <h1 className="title">Welcome to Track Map!</h1>
-        <p className="description">
+      <div className={styles.hero}>
+        <h1 className={styles.title}>Welcome to Track Map!</h1>
+        <p className={styles.description}>
           View Track Map location points, maps and routes.
         </p>
         <Container>

@@ -1,26 +1,18 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-import NavLeft from './nav/NavLeft';
 import NavBar from './nav/NavBar';
 import Footer from './foot/Footer';
+import styles from './MainLayout.module.css';
 
 function MainLayout(mainProps) {
-  const { children, activeLink } = mainProps;
-
-  const wideNav = { width: '240px' };
-  const wideContent = { marginLeft: '240px' };
+  const { children } = mainProps;
 
   return (
     <>
       <NavBar />
-      <Container fluid className="wrapper">
+      <Container fluid className={styles.wrapper}>
         <Row>
-          <Col className="wrapper-left" style={wideNav}>
-            <NavLeft activeLink={activeLink} />
-          </Col>
-          <Col className="wrapper-content" style={wideContent}>
-            {children}
-          </Col>
+          <Col className={styles.wrappercontent}>{children}</Col>
         </Row>
       </Container>
       <Footer />

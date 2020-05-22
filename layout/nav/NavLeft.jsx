@@ -12,7 +12,6 @@ import { useFetchUser } from '../../lib/user';
 import { MENUS, SUBMENUS } from '../../constants/menus';
 
 function NavLeft(props) {
-  //const [user, { mutate }] = useUser();
   const { user, loading } = useFetchUser();
   const { activeLink } = props;
   return (
@@ -32,12 +31,8 @@ function NavLeft(props) {
               </ListGroupItem>
             );
           })}
-        </ListGroup>
-      </div>
-      {!loading && user ? (
-        <>
-          <div className="wrapper-list-group">
-            <ListGroup flush className="list-group-nav-left" tag="div">
+          {!loading && user ? (
+            <>
               {SUBMENUS.map((subItem, k) => {
                 const isActive = activeLink === subItem.name ? true : false;
                 const activeMenus = activeLink && activeLink.split('.');
@@ -49,7 +44,8 @@ function NavLeft(props) {
                       tag={subItem.as}
                       href={subItem.href}
                     >
-                      {subItem.icon && <i className={subItem.icon}></i>}&nbsp;
+                      {subItem.icon && <i className={subItem.icon}></i>}
+                      &nbsp;
                       {subItem.label}
                     </ListGroupItem>
                   )) || (
@@ -63,7 +59,8 @@ function NavLeft(props) {
                         className="dropdown-toggle"
                         id={`toggleCollapser-${k}`}
                       >
-                        {subItem.icon && <i className={subItem.icon}></i>}&nbsp;
+                        {subItem.icon && <i className={subItem.icon}></i>}
+                        &nbsp;
                         {subItem.label}
                       </a>
                       <UncontrolledCollapse
@@ -92,10 +89,10 @@ function NavLeft(props) {
                   )
                 );
               })}
-            </ListGroup>
-          </div>
-        </>
-      ) : null}
+            </>
+          ) : null}
+        </ListGroup>
+      </div>
     </>
   );
 }

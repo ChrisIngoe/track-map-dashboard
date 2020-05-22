@@ -1,11 +1,8 @@
-const withSass = require('@zeit/next-sass');
+//const withSass = require('@zeit/next-sass');
 
 require('dotenv').config();
 
-module.exports = withSass({
-  cssLoaderOptions: {
-    importLoaders: 2,
-  },
+module.exports = {
   env: {
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
     AUTH0_DOMAIN: process.env.AUTH0_DOMAIN,
@@ -19,4 +16,4 @@ module.exports = withSass({
     SESSION_COOKIE_LIFETIME: 7200, // 2 hours
     LOCATION_URL: process.env.LOCATION_URL,
   },
-});
+};

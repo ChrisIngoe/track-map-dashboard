@@ -1,0 +1,24 @@
+.footermain {
+  margin-top: 1rem;
+  margin-bottom: 0rem;
+  text-align: center;
+  background-color: aliceblue;
+}
+
+.footermain ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 16px;
+  margin: 0;
+}
+
+.footermain ul li {
+  display: flex;
+  padding: 6px 8px;
+}
+
+.footermain ul li a {
+  color: #067df7;
+  text-decoration: none;
+  font-size: 13px;
+}

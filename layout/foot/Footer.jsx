@@ -1,8 +1,9 @@
 import React from 'react';
+import styles from './Footer.module.css';
 
 const Footer = () => {
   return (
-    <footer className="footer-main">
+    <footer className={styles.footermain}>
       <ul>
         <li></li>
         <li>
