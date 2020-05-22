@@ -56,7 +56,7 @@ function NavBar() {
               </NavItem>
             ) : (
               <NavItem>
-                <NavLink href="/api/logon" className="text-light h5">
+                <NavLink href="/api/login" className="text-light h5">
                   Login
                 </NavLink>
               </NavItem>
