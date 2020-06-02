@@ -11,7 +11,7 @@ export default auth0.requireAuthentication(async (req, res) => {
     }
     return res.status(200).json(callRes.body);
   } catch (error) {
-    console.error(error);
+    //console.error(error);
     res.status(error.status || 500).end(error.message);
   }
 });
