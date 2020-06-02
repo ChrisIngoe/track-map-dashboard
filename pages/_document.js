@@ -14,10 +14,6 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"
           />
-          <link
-            href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css"
-            rel="stylesheet"
-          />
         </Head>
         <body>
           <Main />
