@@ -1,13 +1,5 @@
-import React, { Component, createRef } from 'react';
-import {
-  Map,
-  TileLayer,
-  Marker,
-  Popup,
-  MapControl,
-  withLeaflet,
-} from 'react-leaflet';
-import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+import React from 'react';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import useSwr from 'swr';
 
 const fetcher = (...args) => fetch(...args).then(response => response.json());
@@ -16,12 +8,9 @@ function MapPage() {
   const url = '/api/locations';
   const { data, error } = useSwr(url, { fetcher });
   const crimes = data && data.Items && !error ? data.Items : [];
-  const draggable = false;
   const position = [51.39, -1.33];
 
   const toggleDraggable = () => {};
-
-  const updateMarker = e => {};
 
   const updatePosition = () => {};
 
