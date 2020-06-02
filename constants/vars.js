@@ -1,6 +1,6 @@
 const THEME = {
-  title: 'NEXT.JS',
-  description: 'React NextJS Website admin template',
+  title: 'Track Map',
+  description: 'Track Map dashboard',
 };
 
 export { THEME };

@@ -7,7 +7,7 @@ const About = () => {
   return (
     <>
       <HeadDefault
-        title="Track Map Dashboard"
+        title="About"
         description="NextJS with Reactstrap components with SCSS library, a NextJS example application."
       />
       <MainLayout>

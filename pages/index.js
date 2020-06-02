@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <>
       <HeadDefault
-        title="Track Map Dashboard"
+        title="Dashboard"
         description="NextJS with Reactstrap components with SCSS library, a NextJS example application."
       />
       <MainLayout>

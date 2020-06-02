@@ -14,7 +14,7 @@ const Map = () => {
   return (
     <>
       <HeadDefault
-        title="Map | Track Map"
+        title="Map"
         description="Map view of Track Map location points"
       />
       <MainLayout>
