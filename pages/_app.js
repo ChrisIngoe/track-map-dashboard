@@ -1,7 +1,4 @@
-import App from 'next/app';
 import React from 'react';
-import MenuContext from '../components/hooks/menuContext';
-//import '../assets/scss/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/brands.min.css';
 import '@fortawesome/fontawesome-free/css/fontawesome.css';
