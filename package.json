@@ -4,7 +4,7 @@
   "description": "Next.Js Track Map dashboard application",
   "main": "index.js",
   "dependencies": {
-    "@auth0/nextjs-auth0": "^0.6.0",
+    "@auth0/nextjs-auth0": "^1.4.2",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@zeit/next-sass": "^1.0.1",
     "bootstrap": "^4.5.0",
